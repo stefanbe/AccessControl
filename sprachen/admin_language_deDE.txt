@@ -1,0 +1,35 @@
+tabuser                     = User-Verwaltung
+tablog                      = Logs
+newuser                     = Neuer User
+pw                          = Passwort
+newpw                       = Neues Passwort
+pwrepeat                    = Wiederholung
+accesstime                  = Angemeldet bleiben (Sek.)
+nolog                       = User nicht mitloggen
+deluser                     = User löschen
+protect                     = Zu schützende Seiten
+cpprotect                   = Zu schützende Seiten übernehmen von:
+save                        = Speichern
+del                         = Löschen
+download                    = Download
+error_tooshortname          = Der neue Benutzername muss mindestens fünf Zeichen lang sein.
+error_notallowedcharname    = Der neue Benutzername enthält Lehrzeichen oder Kommas. Diese sind nicht erlaubt.
+error_newpwerror            = Das neue Passwort entspricht nicht den Regeln (mindestens sechs Zeichen; kleine und große Buchstaben sowie Ziffern).
+error_newpwmismatch         = Das neue Passwort wurde nicht exakt wiederholt.
+error_number                = Nur eine Zahl ist erlaubt
+error_save                  = Die Einstellungen konnten nicht gespeichert werden.
+error_newuserexists         = Einen User mit diesem Namen gibt es schon.
+error_info                  = ACHTUNG, die Fehlermeldung(en) beziehen sich auf alle gekennzeichneten Felder!
+
+admin_text                  = AccessControl Verwaltung
+admin_button                = Öffnen
+login_log_enable            = Anmeldungen der User ins Login-Protokoll schreiben
+login_log_length            = Nach sovielen Einträgen Login-Protokoll leeren (Default = 100):
+login_log_length_error      = In dem Inputfeld sind nur Zahl oder nichts ist erlaubt
+login_log_email_sender      = Vor dem Leeren das Login-Protokoll an diese Emailadresse senden:
+logout_config               = Template für <b>logout</b>.
+login_user_error            = Text für Fehlerhaftes Anmelden. HTML-Elemente sind erlaubt.
+login_config                = Template für <b>login</b>.
+login_config_horizontal     = Template für <b>login_horizontal</b>.
+info_selectbox1             = Ausgabe von &quot;...&quot;, falls kein Benutzer angemeldet ist / irgendein Benutzer angemeldet ist
+info_selectbox2             = Ausgabe von &quot;...&quot;, falls user1 oder user2 angemeldet ist / weder user1, noch user2 angemeldet ist

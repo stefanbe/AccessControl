@@ -1,0 +1,68 @@
+<b><u>AccessControl Verwaltung</u></b><br />
+<ul>
+    <li>Tab: <b>User Verwaltung</b>
+        <ul>
+            <li>Der <b>Speichern</b>-Button speichert alle Änderungen aller User, sowie auch den "Neuen User".</li>
+            <li>Der "Neue User" wird in dem farblich hervorgehobenen Feld eingetragen.</li>
+            <li>Achtung: Der "Neue User"-Name darf keine Leerzeichen oder Kommas enthalten.</li>
+            <li>Bei einem bereits bestehenden User kann in der Selectbox ausgewählt werden, welche Kategorien und Inhaltsseiten (letztere haben ein "->" vor dem Namen) geschützt werden sollen.</li>
+        </ul>
+    </li>
+    <li>Tab: <b>Logs</b>
+        <ul>
+            <li>Der <b>Löschen</b>-Button löscht alle Log-Einträge</li>
+            <li>Mit dem <b>Download</b>-Button können die Log-Einträge als Textdatei zum Speichern auf den eigenen Rechner heruntergeladen werden.</li>
+        </ul>
+    </li>
+</ul>
+<br />
+<b><u>Inhalt schützen:</u></b><br />
+    <ul>
+        <li><b>{AccessControl|whitelist=user1,user2| INHALT }</b><br />
+            <b>INHALT</b> wird nur angezeigt, wenn user1 oder user2 angemeldet sind.</li>
+        <li><b>{AccessControl|blacklist=user1,user2| INHALT }</b><br />
+            <b>INHALT</b> wird nur angezeigt, wenn ein ein anderer User angemeldet ist ausser user1 und user2.</li>
+        <li><b>{AccessControl|any_login| INHALT }</b><br />
+            <b>INHALT</b> wird nur angezeigt, wenn ein beliebiger User angemeldet ist.</li>
+        <li><b>{AccessControl|no_login| INHALT }</b><br />
+            <b>INHALT</b> wird nur angezeigt, wenn <b>kein</b> User angemeldet ist.</li>
+    </ul>
+<br />
+<b><u>Login Feld</u></b><br />
+<ul>
+    <li>Die Syntax für den Login ist <b>{AccessControl|login}</b> oder <b>{AccessControl|login_horizontal}</b> und erscheinen nur, wenn kein User angemeldet ist.</li>
+    <li>Der Logout-Botton <b>{AccessControl|logout}</b> erscheint nur, wenn ein User angemeldet ist.</li>
+    <li>Benutzbar in der <b>template.html</b> oder einer <b>Inhaltsseite</b>.</li>
+</ul>
+<br />
+<b><u>Infos zu AccessControl</u></b><br />
+<ul>
+    <li>Kategorien und Inhaltsseiten, die geschützt sind, erscheinen im Menü erst nach erfolgreicher Anmeldung.</li>
+    <li>AccessControl arbeitet mit der mozilo- eigenen CatPageClass. Das bedeutet, dass alle Plugins, die diese CatPageClass benutzen, damit funktionieren.</li>
+    <li>Auch Kategorien-Links und Inhaltsseiten-Links können geschützt werden.</li>
+    <li>Wenn ein <b>[include|Auf eine geschützte Inhaltsseite]</b> oder ein <b>Plugin</b> benutzt wird, das den Inhalt einer Inhaltsseite verwendet, die geschützt ist, erscheint eine Fehlermeldung. Mit z.B. <b>{AccessControl|any_login| [include|Auf eine geschützte Inhaltseite] }</b> wird das behoben</li>
+    <li>Bei dem MenuSubs-Plugin sollte die Sub-Inhaltsseite und die zugehörige Kategorie auch geschützt werden.</li>
+</ul>
+<br />
+<b><u>Template für login, login_horizontal und logout</u></b><br />
+Mit Hilfe von HTML-Elemente und den Platzhaltern wird ein Eigenes Login Formular Erstellt.<br />
+Die Platzhalter müßen nicht Benutzt werden.<br />
+<br />
+Platzhalter fürs <b>login</b> und <b>login_horizontal</b>
+<ul>
+    <li>{USER_TEXT} = "Benutzername:"</li>
+    <li>{PW_TEXT} = "Passwort:"</li>
+    <li>{USER_PW_TEXT} = "Anmelden mit Benutzername und Passwort."</li>
+    <li>{BUTTON} = "&lt;input type="submit" value="Anmelden" /&gt;"</li>
+    <li>{INPUT_USER} = "&lt;input type="text" name="ac_user" value="" /&gt;"</li>
+    <li>{INPUT_PW} = "&lt;input type="password" name="ac_password" value="" /&gt;"</li>
+    <li>{ERROR} = Text für Fehlerhaftes Anmelden.</li>
+</ul>
+<br />
+Platzhalter fürs <b>logout</b>
+<ul>
+    <li>{USER} = Der angemeldete Username</li>
+    <li>{USER_TEXT} = "ist angemeldet."</li>
+    <li>{BUTTON} = "&lt;input type="submit" value="Abmelden" /&gt;"</li>
+</ul>
+

@@ -1,0 +1,91 @@
+.ac-user-login ul {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+.ac-user-login label {
+    display:block;
+}
+
+.ac-user-login.ac-login-horizontal input {
+    margin-right:.8em;
+}
+
+.ac-user-login.ac-login-horizontal label {
+    display:inline;
+    margin-right:.8em;
+}
+
+.ac-user-logout input {
+    margin-top:.4em;
+}
+
+.ac-user-login .ac-login-error {
+    color:red;
+}
+
+
+/* ab hier sind die einstellungen nur für den Plugin admin */
+
+#access-admin {
+    /*padding-bottom:10em;*/
+}
+
+.ui-multiselect-checkboxes {
+    min-height:10em;
+}
+
+#access-admin table {
+    width : 99%;
+}
+
+#access-admin table td {
+    padding:.4em 0;
+    vertical-align:center;
+}
+
+#access-admin table td .access-in {
+    vertical-align:center;
+    width : 80%;
+}
+
+#access-admin .td1 {
+    text-align:left;
+    width : 20%;
+}
+
+#access-admin .td2 {
+    text-align:left;
+    width : 23%;
+}
+
+#access-admin .td3 {
+    text-align:left;
+    width : 25%;
+}
+
+#access-admin .td4 {
+    text-align:left;
+    width : 7%;
+}
+
+#access-admin .td5 {
+    text-align:right;
+}
+
+#access-admin .error-in {
+    border-color:#f00;
+}
+
+#access-admin .access-bottons-box {
+    margin-top:.8em;
+    padding:.4em;
+}
+
+#access-admin .access-log {
+    padding:1em;
+    font-size:1.2em;
+}
+
+

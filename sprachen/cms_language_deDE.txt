@@ -1,0 +1,15 @@
+login_ok            = Login OK
+login_error         = Login FEHLER
+login_nouser        = Unbekanter User
+login_errorcheck    = Login fehlerhaft.
+user                = Benutzername:
+pw                  = Passwort:
+login               = Anmelden
+logout              = Abmelden
+logged_in_text      = ist angemeldet.
+user_pw_horizontal  = Anmelden mit Benutzername und Passwort.
+log_text_status     = Status:
+log_text_count      = Versuche:
+log_text_user       = Benutzer:
+mail_messages_log   = Im Anhang ist das Login Protokoll vom {DATE} als Textdatei
+mail_subject_log    = AccessControl Login Protokoll vom {DATE}
