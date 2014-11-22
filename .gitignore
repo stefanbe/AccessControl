@@ -1,0 +1,22 @@
+# AccessControl
+*.*
+!.gitignore
+!README.md
+!index.php
+!plugin.css
+!admin.php
+!class.phpmailer-lite.php
+
+*/
+!sprachen/
+!sprachen/*
+
+# algemein
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
