@@ -28,7 +28,10 @@ class AccessControl extends Plugin {
         global $CMS_CONF;
         $this->cms_lang = new Language(PLUGIN_DIR_REL."AccessControl/sprachen/cms_language_".$CMS_CONF->get("cmslanguage").".txt");
 
-        $this->current_url = 'http://' . $_SERVER['HTTP_HOST'].str_replace('&amp;','&',$_SERVER['REQUEST_URI']);
+        if(defined("HTTP"))
+            $this->current_url = HTTP.$_SERVER['HTTP_HOST'].str_replace('&amp;','&',$_SERVER['REQUEST_URI']);
+        else
+            $this->current_url = "http://".$_SERVER['HTTP_HOST'].str_replace('&amp;','&',$_SERVER['REQUEST_URI']);
         $this->current_url = str_replace('&','&amp;',$this->current_url);
 
         $this->ac_users = $this->settings->get('ac_users');
