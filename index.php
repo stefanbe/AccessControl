@@ -175,7 +175,7 @@ class AccessControl extends Plugin {
             $log = "";
         $log = str_replace($page_protect_search,"",$log);
 
-        $new_log = date('d.m.Y | H:i:s');
+        $new_log = date('Y.m.d | H:i:s');
         $status = $_SESSION['AC_LOGIN_STATUS'];
         if(!isset($this->ac_users[$user]))
             $status = 'login_nouser';
@@ -199,7 +199,7 @@ class AccessControl extends Plugin {
         $from = $this->settings->get('login_log_email_sender');
         if(empty($from))
             return;
-        $date = date('d m Y H:i:s');
+        $date = date('Y m d H:i:s');
         $messages = str_replace('{DATE}',$date,$this->cms_lang->getLanguageValue("mail_messages_log"));
         $subject = str_replace('{DATE}',$date,$this->cms_lang->getLanguageValue("mail_subject_log"));
 
