@@ -9,7 +9,7 @@ class Access_Admin extends AccessControl {
     private $error_users = array();
     private $tabindex = 1;
 
-    function Access_Admin($plugin) {
+    public function __construct($plugin) {
         $this->a_settings = $plugin->settings;
         $this->self_url = $plugin->PLUGIN_SELF_URL;
         $this->users = $this->get_user_array();
@@ -24,7 +24,7 @@ class Access_Admin extends AccessControl {
         $this->getInfo();
     }
 
-    function out() {
+    public function out() {
         $html = '';
         $tab_user = ' ui-tabs-selected ui-state-active';
         $tab_log = ' js-hover-default';
@@ -48,7 +48,7 @@ class Access_Admin extends AccessControl {
         return $html;
     }
 
-    function get_tab_user() {
+    public function get_tab_user() {
         $html = '';
         if(getRequestValue('access-save',"post",false)) {
             $access_post = getRequestValue('access',"post",false);
@@ -126,7 +126,7 @@ class Access_Admin extends AccessControl {
         return $html;
     }
 
-    function get_tab_log() {
+    public function get_tab_log() {
         if($this->a_settings->get("login_log_enable") != "true")
             return NULL;
         $html = '';
@@ -181,14 +181,14 @@ class Access_Admin extends AccessControl {
     }
 
 
-    function get_user_array() {
+    public function get_user_array() {
         $users = $this->a_settings->get('ac_users');
             if(!is_array($users))
                 $users = array();
         return $users;
     }
 
-    function get_user_tpl($user) {
+    public function get_user_tpl($user) {
         $error_user = '';
         $error_pw = '';
         $error_pwrepeat = '';
@@ -256,7 +256,7 @@ class Access_Admin extends AccessControl {
         return $html;
     }
 
-    function check_pw($pw) {
+    public function check_pw($pw) {
         if(strlen($pw) >= 6
                 and preg_match("/[0-9]/", $pw)
             and preg_match("/[a-z]/", $pw)
@@ -273,7 +273,7 @@ class Access_Admin extends AccessControl {
         return $newpw;
     }
 
-    function change_user_settings($user,$settings,$username) {
+    public function change_user_settings($user,$settings,$username) {
         $newpw = $user['access-userpw'];
         if(!$newpw or !$this->check_pw($newpw)) {
             if($newpw and !$this->check_pw($newpw)) {
@@ -316,7 +316,7 @@ class Access_Admin extends AccessControl {
         return $settings;
     }
 
-    function make_new_user($newuser) {
+    public function make_new_user($newuser) {
         $user = $newuser['access-username'];
         if(!$user or strlen($user) < 5) {
             if($user and strlen($user) < 5) {
@@ -375,7 +375,7 @@ class Access_Admin extends AccessControl {
         return false;
     }
 
-    function make_newuser_select($user) {
+    public function make_newuser_select($user) {
         $html_tpl = '';
         if(count($this->users) > 0) {
             $html_tpl .= '<select class="access-newuser-select" name="access['.$user.'][access-userclone]" tabindex="'.($this->tabindex + 2).'">';
@@ -388,7 +388,7 @@ class Access_Admin extends AccessControl {
         return $html_tpl;
     }
 
-    function make_user_catpage_select($user) {
+    public function make_user_catpage_select($user) {
         global $CatPage;
         $html_tpl = '<select class="mo-select access-select" title="'.$this->admin_lang->getLanguageValue("protect").'" name="access['.$user.'][access-catpage][]" multiple="multiple" tabindex="'.($this->tabindex + 2).'">';
         foreach ($CatPage->get_CatArray(false,true,array(EXT_PAGE,EXT_HIDDEN)) as $cat) {
@@ -410,5 +410,3 @@ class Access_Admin extends AccessControl {
 
 $Access_Admin = new Access_Admin($plugin);
 return $Access_Admin->out();
-
-?>
